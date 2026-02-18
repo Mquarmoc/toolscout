@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const comparisons = await getCollection('comparisons');
+const reviews = await getCollection('reviews');
+const guides = await getCollection('guides');
+
+const allContent = [...comparisons, ...reviews, ...guides]
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<Base title="Independent AI & Developer Tool Reviews" description="Honest, hands-on comparisons and reviews of AI coding assistants, developer tools, and automation platforms. No hype, just real testing.">
+  
+  <section class="mb-12">
+    <h1 class="text-4xl font-bold text-slate-900 mb-3">Find the right tool, skip the marketing.</h1>
+    <p class="text-xl text-slate-600 max-w-2xl">
+      We test AI coding assistants, developer tools, and automation platforms hands-on. 
+      No sponsored rankings. No hype. Just honest analysis from developers who use these tools daily.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">Latest Articles</h2>
+    <div class="grid gap-6">
+      {allContent.map((post) => (
+        <a href={`/${post.collection}/${post.id.replace(/\.mdx?$/, '')}`} class="block group">
+          <article class="border border-slate-200 rounded-lg p-6 hover:border-indigo-300 hover:shadow-md transition-all">
+            <div class="flex items-center gap-2 text-sm text-slate-500 mb-2">
+              <span class="text-indigo-600 uppercase tracking-wide font-medium text-xs">{post.collection}</span>
+              <span>·</span>
+              <time datetime={post.data.date}>
+                {new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </time>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">
+              {post.data.title}
+            </h3>
+            <p class="text-slate-600 mt-2">{post.data.description}</p>
+          </article>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {allContent.length === 0 && (
+    <p class="text-slate-500 text-center py-12">Content coming soon. Check back shortly.</p>
+  )}
+</Base>
