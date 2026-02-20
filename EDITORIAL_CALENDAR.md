@@ -8,14 +8,14 @@
 | 1 | Cursor vs Windsurf vs Claude Code 2026 | comparison | 2026-02-18 |
 | 2 | GitHub Copilot vs Cursor 2026 | comparison | 2026-02-18 |
 | 3 | Claude Code CLI Review 2026 | review | 2026-02-18 |
+| 4 | Codex CLI vs Claude Code: OpenAI's New Terminal Tool Compared | comparison | 2026-02-20 |
+| 5 | Best AI Coding Assistants in 2026: Complete Ranking | guide | 2026-02-20 |
 
 ## Queue (Priority Order)
 High commercial intent keywords first. Each article should be 1500-2500 words.
 
 | # | Article Title | Type | Target Keywords | Priority |
 |---|--------------|------|-----------------|----------|
-| 4 | Codex CLI vs Claude Code: OpenAI's New Terminal Tool Compared | comparison | codex cli vs claude code, openai codex cli review | HIGH |
-| 5 | Best AI Coding Assistants in 2026: Complete Ranking | guide | best ai coding assistant 2026, ai code tools ranked | HIGH |
 | 6 | Cursor Pricing Explained: Is Pro Worth It? | review | cursor pricing, cursor pro worth it, cursor free vs pro | HIGH |
 | 7 | V0 by Vercel vs Bolt.new vs Lovable: AI App Builders Compared | comparison | v0 vs bolt.new, ai app builder comparison | HIGH |
 | 8 | Replit Agent vs Cursor: Which Is Better for Building Apps? | comparison | replit agent vs cursor, replit ai review | MED |
