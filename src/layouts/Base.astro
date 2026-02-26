@@ -8,7 +8,8 @@ interface Props {
 }
 
 const { title, description, canonicalUrl } = Astro.props;
-const siteUrl = 'https://toolscout.dev';
+const siteUrl = 'https://mquarmoc.github.io';
+const basePath = '/toolscout';
 const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 ---
 
@@ -26,20 +27,26 @@ const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
   <meta property="og:description" content={description} />
   <meta property="og:type" content="article" />
   <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="ToolScout" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={`${basePath}/favicon.svg`} />
 </head>
 <body class="bg-white text-slate-800 antialiased">
   <header class="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
     <nav class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors">
+      <a href={basePath + "/"} class="text-xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors">
         🔍 ToolScout
       </a>
       <div class="flex gap-6 text-sm text-slate-600">
-        <a href="/comparisons" class="hover:text-indigo-600 transition-colors">Comparisons</a>
-        <a href="/reviews" class="hover:text-indigo-600 transition-colors">Reviews</a>
-        <a href="/guides" class="hover:text-indigo-600 transition-colors">Guides</a>
+        <a href={basePath + "/comparisons"} class="hover:text-indigo-600 transition-colors">Comparisons</a>
+        <a href={basePath + "/reviews"} class="hover:text-indigo-600 transition-colors">Reviews</a>
+        <a href={basePath + "/guides"} class="hover:text-indigo-600 transition-colors">Guides</a>
       </div>
     </nav>
   </header>
