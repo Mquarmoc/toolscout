@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mquarmoc.github.io/toolscout/sitemap-index.xml
